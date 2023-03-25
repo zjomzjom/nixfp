@@ -1,0 +1,26 @@
+﻿@model ListResultsViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h3>List of shortened urls</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Shortened url</th>
+                <th scope="col">Target</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Results)
+            {
+                <tr>
+                    <td><a href="@item.ShortenedUrl">@item.ShortenedUrl</a></td>
+                    <td><a href="@item.TargetUrl">@item.TargetUrl</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

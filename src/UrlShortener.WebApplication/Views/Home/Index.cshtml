@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <h3>Lets shorten url!</h3>
+
+    <form method="POST" action="/generate">
+        <input type="url" name="TargetUrl" />
+        <button>Go!</button>
+    </form>
+
+    <a href="/list">All shortened links</a>
+
+    <div class="errors-container">
+        @if (ViewBag.RedirectError != null)
+        {
+            <div class="alert alert-danger" role="alert">
+                @ViewBag.RedirectError
+            </div>
+        }
+
+        @if (ViewBag.ValidationErrors != null)
+        {
+            @foreach (var error in ViewBag.ValidationErrors)
+            {
+                <div class="alert alert-danger" role="alert">
+                    @error.ToString()
+                </div>
+            }
+        }
+    </div>
+</div>
