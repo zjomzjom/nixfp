@@ -18,6 +18,7 @@ EF in memory db is used, so there is nothing that should be done as a prerequisi
 - Paging in the /list resource.
 - Retry logic when the unique index violation occurs (collision on keys).
 - Some integration tests.
+- Some length limit of the given URL.
 
 ## Task Description 
 >Build a URL shortening service like TinyURL. This service will provide short aliases redirecting to long URLs.
